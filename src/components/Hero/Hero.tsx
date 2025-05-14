@@ -53,7 +53,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              Turning complex problems into clean, scalable solutions
+              Founder of <a href="https://code-nest.dev" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">code-nest.dev</a> | Turning complex problems into clean, scalable solutions
             </motion.h2>
             
             <motion.p 
@@ -62,8 +62,9 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              10+ years building fast, secure, and maintainable web applications.
-              Specializing in React, Node.js, and cloud architecture.
+              Building the future of web development through innovative solutions and mentorship.
+              Specializing in React, Node.js, and cloud architecture with a focus on creating
+              maintainable and scalable applications.
             </motion.p>
 
             {/* CTA Buttons */}
