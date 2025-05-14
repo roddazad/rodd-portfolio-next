@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from 'next-themes';
+import { useScrollDirection } from '@/hooks/useScrollDirection';
 import {
   SunIcon,
   MoonIcon,
@@ -23,6 +24,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+  const scrollDirection = useScrollDirection();
 
   // After mounting, we can safely show the theme UI
   useEffect(() => setMounted(true), []);
@@ -32,7 +34,10 @@ export default function Navbar() {
   return (
     <motion.nav
       initial={{ y: -100 }}
-      animate={{ y: 0 }}
+      animate={{ 
+        y: scrollDirection === 'down' ? -100 : 0,
+        transition: { duration: 0.3 }
+      }}
       className="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
