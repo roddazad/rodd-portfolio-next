@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { SiReact, SiNodedotjs, SiTypescript, SiTailwindcss, SiNextdotjs, SiAws } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaTwitter, FaAws } from 'react-icons/fa';
+import { SiReact, SiNodedotjs, SiTypescript, SiTailwindcss, SiNextdotjs } from 'react-icons/si';
 
 const techStack = [
   { icon: SiReact, name: 'React' },
@@ -11,7 +11,7 @@ const techStack = [
   { icon: SiTypescript, name: 'TypeScript' },
   { icon: SiTailwindcss, name: 'Tailwind' },
   { icon: SiNextdotjs, name: 'Next.js' },
-  { icon: SiAws, name: 'AWS' },
+  { icon: FaAws, name: 'AWS' },
 ];
 
 const socialLinks = [
