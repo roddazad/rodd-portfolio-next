@@ -134,11 +134,11 @@ export default function Hero() {
             className="relative"
           >
             <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
-              {/* Placeholder for profile image - Replace src with your image */}
+              {/* Profile image */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 animate-pulse" />
               <div className="absolute inset-2 rounded-full overflow-hidden bg-white dark:bg-gray-800">
                 <Image
-                  src="/profile-placeholder.jpg" // Replace with your image
+                  src="/profile.jpg"
                   alt="Rodd Azad"
                   fill
                   className="object-cover"
