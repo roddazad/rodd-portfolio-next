@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { FaGithub, FaLinkedin, FaTwitter, FaAws } from 'react-icons/fa';
-import { SiReact, SiNodedotjs, SiTypescript, SiTailwindcss, SiNextdotjs } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaTwitter, FaDatabase } from 'react-icons/fa';
+import { SiReact, SiNodedotjs, SiTypescript, SiTailwindcss, SiNextdotjs, SiMongodb, SiPostgresql } from 'react-icons/si';
 
 const techStack = [
   { icon: SiReact, name: 'React' },
@@ -11,7 +11,9 @@ const techStack = [
   { icon: SiTypescript, name: 'TypeScript' },
   { icon: SiTailwindcss, name: 'Tailwind' },
   { icon: SiNextdotjs, name: 'Next.js' },
-  { icon: FaAws, name: 'AWS' },
+  { icon: SiMongodb, name: 'MongoDB' },
+  { icon: SiPostgresql, name: 'PostgreSQL' },
+  { icon: FaDatabase, name: 'SQL/NoSQL' },
 ];
 
 const socialLinks = [
