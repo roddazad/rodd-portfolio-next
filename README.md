@@ -1,24 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rodd Azad Portfolio (rodd-portfolio-next)
+
+This is my personal and business portfolio, built with the latest Next.js, TypeScript, and Tailwind CSS. Here, I showcase my milestones, achievements, and projects, demonstrating my full stack web development skills to employers and potential clients.
+
+## Features
+- Modern, responsive design
+- Sections for personal and business achievements
+- Project and experience showcase
+- Built with Next.js App Router, TypeScript, and Tailwind CSS
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Purpose
+This portfolio is a living document of my journey as a developer, highlighting my skills, experience, and the value I can bring to teams and clients.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Feel free to explore the code and reach out if you'd like to collaborate or learn more!
 
 ## Learn More
 
