@@ -44,7 +44,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              Senior Full-Stack Engineer
+              Full-Stack Developer
             </motion.h1>
             
             <motion.h2 
