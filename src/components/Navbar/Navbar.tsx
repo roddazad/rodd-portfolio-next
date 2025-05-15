@@ -2,11 +2,8 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTheme } from 'next-themes';
 import { useScrollDirection } from '@/hooks/useScrollDirection';
 import {
-  SunIcon,
-  MoonIcon,
   Bars3Icon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
@@ -21,14 +18,9 @@ const navItems = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
   const scrollDirection = useScrollDirection();
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-
-  // After mounting, we can safely show the theme UI
-  useEffect(() => setMounted(true), []);
 
   // Handle click outside
   useEffect(() => {
@@ -100,22 +92,6 @@ export default function Navbar() {
               >
                 Resume
               </motion.a>
-
-              {/* Theme Toggle */}
-              {mounted && (
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                  className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700"
-                >
-                  {theme === 'dark' ? (
-                    <SunIcon className="h-5 w-5 text-yellow-500" />
-                  ) : (
-                    <MoonIcon className="h-5 w-5 text-gray-700" />
-                  )}
-                </motion.button>
-              )}
             </div>
           </div>
 
@@ -123,9 +99,9 @@ export default function Navbar() {
           <div className="md:hidden">
             <motion.button
               ref={buttonRef}
-              whileTap={{ scale: 0.9 }}
+              whileTap={{ scale: 0.95 }}
               onClick={toggleMenu}
-              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700"
+              className="p-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none"
             >
               {isOpen ? (
                 <XMarkIcon className="h-6 w-6" />
@@ -152,17 +128,17 @@ export default function Navbar() {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  whileHover={{ x: 10 }}
-                  className="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400"
+                  whileTap={{ scale: 0.95 }}
+                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </motion.a>
               ))}
               <motion.a
-                whileHover={{ x: 10 }}
+                whileTap={{ scale: 0.95 }}
                 href="/resume.pdf"
-                className="block px-3 py-2 text-base font-medium text-blue-600 dark:text-blue-400"
+                className="block px-3 py-2 rounded-md text-base font-medium bg-blue-600 text-white hover:bg-blue-700"
                 onClick={() => setIsOpen(false)}
               >
                 Resume

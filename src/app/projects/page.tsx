@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { SiReact, SiNodedotjs, SiTypescript, SiTailwindcss, SiNextdotjs, SiMongodb, SiPostgresql, SiDocker } from 'react-icons/si';
 import ProjectCard from '@/components/Projects/ProjectCard';
 import ProjectModal from '@/components/Projects/ProjectModal';

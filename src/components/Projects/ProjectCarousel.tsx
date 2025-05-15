@@ -1,24 +1,9 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import ProjectCard from './ProjectCard';
-
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  result: string;
-  techStack: Array<{
-    icon: React.ComponentType<{ className?: string }>;
-    name: string;
-  }>;
-  complexity: string;
-  demoUrl?: string;
-  repoUrl?: string;
-}
+import { Project } from '@/types/Project';
 
 interface ProjectCarouselProps {
   projects: Project[];
@@ -29,7 +14,7 @@ export default function ProjectCarousel({ projects, onLearnMore }: ProjectCarous
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
-  const scrollTimeout = useRef<NodeJS.Timeout>();
+  const scrollTimeout = useRef<NodeJS.Timeout | undefined>(undefined);
 
   const updateCurrentIndex = () => {
     if (carouselRef.current) {
@@ -40,12 +25,12 @@ export default function ProjectCarousel({ projects, onLearnMore }: ProjectCarous
     }
   };
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     if (scrollTimeout.current) {
       clearTimeout(scrollTimeout.current);
     }
     scrollTimeout.current = setTimeout(updateCurrentIndex, 100);
-  };
+  }, []);
 
   const handlePrev = () => {
     if (carouselRef.current) {
@@ -88,7 +73,7 @@ export default function ProjectCarousel({ projects, onLearnMore }: ProjectCarous
         }
       };
     }
-  }, []);
+  }, [handleScroll]);
 
   return (
     <div className="relative w-full max-w-6xl mx-auto px-4">

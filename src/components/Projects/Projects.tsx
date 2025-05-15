@@ -2,9 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import { SiReact, SiNodedotjs, SiTypescript, SiTailwindcss, SiNextdotjs, SiMongodb, SiPostgresql, SiDocker, SiJavascript, SiPython, SiDjango } from 'react-icons/si';
-import Link from 'next/link';
+import { SiReact, SiNodedotjs, SiTypescript, SiTailwindcss, SiNextdotjs, SiMongodb, SiPostgresql, SiDocker, SiPython, SiDjango } from 'react-icons/si';
 import ProjectCarousel from './ProjectCarousel';
 import ProjectModal from './ProjectModal';
 
@@ -111,22 +109,6 @@ export default function Projects() {
           projects={featuredProjects}
           onLearnMore={handleLearnMore}
         />
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-center mt-12"
-        >
-          <Link
-            href="/projects"
-            className="inline-flex items-center px-6 py-3 rounded-lg bg-transparent border-2 border-blue-500 text-blue-500 font-medium hover:bg-blue-500 hover:text-white transition-colors"
-          >
-            View All Projects
-            <FaExternalLinkAlt className="ml-2 w-4 h-4" />
-          </Link>
-        </motion.div>
 
         <ProjectModal
           project={selectedProject}
