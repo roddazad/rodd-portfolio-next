@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { SiReact, SiNodedotjs, SiTypescript, SiTailwindcss, SiNextdotjs, SiMongodb, SiPostgresql, SiDocker, SiPython, SiDjango, SiFramer, SiVite, SiOpenai, SiExpress } from 'react-icons/si';
+import { SiReact, SiNodedotjs, SiTypescript, SiTailwindcss, SiNextdotjs, SiMongodb, SiFramer, SiVite, SiOpenai, SiExpress } from 'react-icons/si';
 import ProjectCarousel from './ProjectCarousel';
 import ProjectModal from './ProjectModal';
 
@@ -14,6 +14,7 @@ const featuredProjects = [
     description: 'An interactive quiz application designed to assess and enhance users\' JavaScript skills through gamified learning.',
     image: '/projects/bytebattle.png',
     result: 'Interactive coding quiz platform with gamified learning experience',
+    complexity: 'Advanced',
     techStack: [
       { icon: SiNextdotjs, name: 'Next.js' },
       { icon: SiTypescript, name: 'TypeScript' },
@@ -30,6 +31,7 @@ const featuredProjects = [
     description: 'A professional SaaS landing page showcasing modular architecture and animated user experience for team collaboration tools.',
     image: '/projects/saasify.png',
     result: 'Modern SaaS landing page with engaging animations and modular design',
+    complexity: 'Intermediate',
     techStack: [
       { icon: SiNextdotjs, name: 'Next.js' },
       { icon: SiTypescript, name: 'TypeScript' },
@@ -46,6 +48,7 @@ const featuredProjects = [
     description: 'A clean, functional dashboard designed to organize tasks and boost team productivity through intuitive UI.',
     image: '/projects/donezo.png',
     result: 'Efficient task management dashboard with intuitive user interface',
+    complexity: 'Advanced',
     techStack: [
       { icon: SiNextdotjs, name: 'Next.js' },
       { icon: SiTypescript, name: 'TypeScript' },
@@ -62,6 +65,7 @@ const featuredProjects = [
     description: 'A sleek, modern front-end for a high-tech robotics firm, emphasizing innovation and clean design.',
     image: '/projects/northernai.png',
     result: 'Professional corporate landing page showcasing robotics innovation',
+    complexity: 'Intermediate',
     techStack: [
       { icon: SiNextdotjs, name: 'Next.js' },
       { icon: SiTypescript, name: 'TypeScript' },
@@ -78,6 +82,7 @@ const featuredProjects = [
     description: 'A vibrant educational site aimed at making learning fun and interactive for kids with colorful design and modular content.',
     image: '/projects/kidlearn.png',
     result: 'Engaging educational platform for children with interactive content',
+    complexity: 'Advanced',
     techStack: [
       { icon: SiNextdotjs, name: 'Next.js' },
       { icon: SiTypescript, name: 'TypeScript' },
@@ -97,6 +102,7 @@ const featuredProjects = [
     description: 'A cutting-edge platform for multilingual AI-powered image creation with intuitive UX and fast performance.',
     image: '/projects/aiuniverse.png',
     result: 'Advanced AI image generation platform with multilingual support',
+    complexity: 'Advanced',
     techStack: [
       { icon: SiReact, name: 'React' },
       { icon: SiVite, name: 'Vite' },

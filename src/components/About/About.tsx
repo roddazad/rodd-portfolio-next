@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaRocket, FaHeart, FaChess, FaBook, FaGamepad } from 'react-icons/fa';
+import { FaRocket, FaHeart } from 'react-icons/fa';
 
 export default function About() {
   return (
@@ -27,13 +27,13 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <p className="text-xl text-gray-300 mb-6 leading-relaxed">
-                I'm a full-stack developer and founder of CodeNest, specializing in crafting high-performance digital experiences. With a Master's in Electrical Engineering from UW and currently pursuing a Master's in Information Technology (Cloud Computing) at ASU, I bridge the gap between technical excellence and human-centered design.
+                I&apos;m a full-stack developer and founder of CodeNest, specializing in crafting high-performance digital experiences. With a Master&apos;s in Electrical Engineering from UW and currently pursuing a Master&apos;s in Information Technology (Cloud Computing) at ASU, I bridge the gap between technical excellence and human-centered design.
               </p>
               <p className="text-xl text-gray-300 mb-6 leading-relaxed">
-                My approach combines technical expertise with a deep understanding of business needs. I specialize in optimizing React applications for >90 Lighthouse scores and building scalable systems that evolve with your business.
+                My approach combines technical expertise with a deep understanding of business needs. I specialize in optimizing React applications for {'>'}90 Lighthouse scores and building scalable systems that evolve with your business.
               </p>
               <p className="text-xl text-gray-300 leading-relaxed">
-                At CodeNest, we don't just build websites — we create digital homes where brands live, connect, and grow. Every project is an opportunity to blend clean code, beautiful UI, and meaningful impact.
+                At CodeNest, we don&apos;t just build websites — we create digital homes where brands live, connect, and grow. Every project is an opportunity to blend clean code, beautiful UI, and meaningful impact.
               </p>
             </motion.div>
           </div>
@@ -52,7 +52,7 @@ export default function About() {
                 <h3 className="text-xl font-bold text-white">Family First</h3>
               </div>
               <p className="text-gray-300">
-                When I'm not coding, I'm a proud father to a 9-year-old son and a loving husband. Our family time is filled with chess matches, board games, and shared adventures in reading and learning.
+                When I&apos;m not coding, I&apos;m a proud father to a 9-year-old son and a loving husband. Our family time is filled with chess matches, board games, and shared adventures in reading and learning.
               </p>
             </motion.div>
 

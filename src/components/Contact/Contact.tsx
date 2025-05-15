@@ -2,7 +2,8 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaPhone, FaCalendarAlt, FaTimes } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaPhone, FaTimes } from 'react-icons/fa';
+import { IconType } from 'react-icons';
 
 const socialLinks = [
   {
@@ -47,7 +48,24 @@ const contactMethods = [
   }
 ];
 
-const ContactButton = ({ item }: { item: typeof contactMethods[0] | typeof socialLinks[0] }) => {
+type SocialLink = {
+  name: string;
+  icon: IconType;
+  url: string;
+  color: string;
+  bgColor: string;
+};
+
+type ContactMethod = {
+  name: string;
+  icon: IconType;
+  value: string;
+  url: string;
+  color: string;
+  bgColor: string;
+};
+
+const ContactButton = ({ item }: { item: SocialLink | ContactMethod }) => {
   const Icon = item.icon;
   
   return (
@@ -62,7 +80,9 @@ const ContactButton = ({ item }: { item: typeof contactMethods[0] | typeof socia
       className={`flex items-center gap-3 px-6 py-4 rounded-xl ${item.bgColor} ${item.color} transition-colors duration-200`}
     >
       <Icon className="w-5 h-5" />
-      <span className="font-medium">{item.value || item.name}</span>
+      <span className="font-medium">
+        {'value' in item ? item.value : item.name}
+      </span>
     </motion.a>
   );
 };
@@ -98,7 +118,7 @@ const ContactForm = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void
       } else {
         setSubmitStatus('error');
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -220,14 +240,13 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="max-w-4xl mx-auto text-center"
+          className="max-w-4xl mx-auto"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Let's Connect
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
+            Let&apos;s Connect
           </h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-            I'm currently open to new opportunities and would love to discuss how I can contribute to your team's success.
+          <p className="text-xl text-gray-300 text-center mb-12">
+            I&apos;m always open to discussing new opportunities and interesting projects. Whether you&apos;re looking for a developer or just want to connect, feel free to reach out!
           </p>
 
           {/* Primary CTA */}
