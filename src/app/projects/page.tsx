@@ -7,80 +7,106 @@ import ProjectCard from '@/components/Projects/ProjectCard';
 import ProjectModal from '@/components/Projects/ProjectModal';
 
 // Sample project data - replace with your actual projects
+const categories = ['All', 'Frontend', 'Full Stack', 'AI/ML'];
+
 const allProjects = [
-  // Featured Projects
   {
     id: '1',
-    title: 'Code Nest Platform',
-    description: 'A comprehensive learning platform for developers, featuring interactive courses, real-time code execution, and personalized learning paths.',
-    image: 'https://placehold.co/600x400/2563eb/ffffff?text=Code+Nest+Platform',
-    result: 'Successfully launched with 1000+ active users and 95% course completion rate',
-    techStack: [
-      { icon: SiReact, name: 'React' },
-      { icon: SiNodedotjs, name: 'Node.js' },
-      { icon: SiTypescript, name: 'TypeScript' },
-      { icon: SiMongodb, name: 'MongoDB' },
-      { icon: SiDocker, name: 'Docker' },
-    ],
-    complexity: 'High',
-    category: 'Full Stack',
-    demoUrl: 'https://code-nest.dev',
-    repoUrl: 'https://github.com/yourusername/code-nest',
-  },
-  {
-    id: '2',
-    title: 'E-Commerce Platform',
-    description: 'A scalable e-commerce solution with real-time inventory management, payment processing, and analytics dashboard.',
-    image: 'https://placehold.co/600x400/2563eb/ffffff?text=E-Commerce+Platform',
-    result: 'Processed $1M+ in transactions with 99.9% uptime',
-    techStack: [
-      { icon: SiNextdotjs, name: 'Next.js' },
-      { icon: SiPostgresql, name: 'PostgreSQL' },
-      { icon: SiTypescript, name: 'TypeScript' },
-      { icon: SiTailwindcss, name: 'Tailwind' },
-    ],
-    complexity: 'High',
-    category: 'Full Stack',
-    demoUrl: 'https://demo-ecommerce.com',
-    repoUrl: 'https://github.com/yourusername/ecommerce',
-  },
-  // Additional Projects
-  {
-    id: '5',
-    title: 'Portfolio Website',
-    description: 'A modern, responsive portfolio website built with Next.js and Tailwind CSS.',
-    image: 'https://placehold.co/600x400/2563eb/ffffff?text=Portfolio',
-    result: 'Achieved 100/100 Lighthouse score for performance and accessibility',
+    title: 'ByteBattle',
+    description: 'An interactive quiz application designed to assess and enhance users\' JavaScript skills through gamified learning.',
+    image: '/projects/bytebattle.png',
+    result: 'Interactive coding quiz platform with gamified learning experience',
     techStack: [
       { icon: SiNextdotjs, name: 'Next.js' },
       { icon: SiTypescript, name: 'TypeScript' },
-      { icon: SiTailwindcss, name: 'Tailwind' },
+      { icon: SiTailwindcss, name: 'Tailwind CSS' },
     ],
     complexity: 'Medium',
     category: 'Frontend',
-    demoUrl: 'https://your-portfolio.com',
-    repoUrl: 'https://github.com/yourusername/portfolio',
+    demoUrl: 'https://nesters-bytebattle-quiz-app-eta.vercel.app/',
+    repoUrl: 'https://github.com/codedpro/BYTE-BATTLE',
+  },
+  {
+    id: '2',
+    title: 'SaaSify',
+    description: 'A professional SaaS landing page showcasing modular architecture and animated user experience for team collaboration tools.',
+    image: '/projects/saasify.png',
+    result: 'Modern SaaS landing page with engaging animations and modular design',
+    techStack: [
+      { icon: SiNextdotjs, name: 'Next.js' },
+      { icon: SiTypescript, name: 'TypeScript' },
+      { icon: SiTailwindcss, name: 'Tailwind CSS' },
+    ],
+    complexity: 'Medium',
+    category: 'Frontend',
+    demoUrl: 'https://nesters-saas-landing-page.vercel.app/',
+    repoUrl: 'https://github.com/codedpro/SaaSify',
+  },
+  {
+    id: '3',
+    title: 'Donezo',
+    description: 'A clean, functional dashboard designed to organize tasks and boost team productivity through intuitive UI.',
+    image: '/projects/donezo.png',
+    result: 'Efficient task management dashboard with intuitive user interface',
+    techStack: [
+      { icon: SiNextdotjs, name: 'Next.js' },
+      { icon: SiTypescript, name: 'TypeScript' },
+      { icon: SiTailwindcss, name: 'Tailwind CSS' },
+    ],
+    complexity: 'Medium',
+    category: 'Frontend',
+    demoUrl: 'https://nesters-donezo-landing-delta.vercel.app/',
+    repoUrl: 'https://github.com/codedpro/Donezo',
+  },
+  {
+    id: '4',
+    title: 'NorthernAI Robotics',
+    description: 'A sleek, modern front-end for a high-tech robotics firm, emphasizing innovation and clean design.',
+    image: '/projects/northernai.png',
+    result: 'Professional corporate landing page showcasing robotics innovation',
+    techStack: [
+      { icon: SiNextdotjs, name: 'Next.js' },
+      { icon: SiTypescript, name: 'TypeScript' },
+      { icon: SiTailwindcss, name: 'Tailwind CSS' },
+    ],
+    complexity: 'Medium',
+    category: 'Frontend',
+    demoUrl: 'https://nesters-ai-robotics-landing-page.vercel.app/',
+    repoUrl: 'https://github.com/codedpro/NorthenAI---Robotics',
+  },
+  {
+    id: '5',
+    title: 'KidLearn',
+    description: 'A vibrant educational site aimed at making learning fun and interactive for kids with colorful design and modular content.',
+    image: '/projects/kidlearn.png',
+    result: 'Engaging educational platform for children with interactive content',
+    techStack: [
+      { icon: SiNextdotjs, name: 'Next.js' },
+      { icon: SiTypescript, name: 'TypeScript' },
+      { icon: SiTailwindcss, name: 'Tailwind CSS' },
+    ],
+    complexity: 'Medium',
+    category: 'Frontend',
+    demoUrl: 'https://nesters-kidlearn-landing-two.vercel.app/',
+    repoUrl: 'https://github.com/codedpro/Kidlearn',
   },
   {
     id: '6',
-    title: 'Real-time Chat Application',
-    description: 'A real-time chat application with end-to-end encryption and file sharing capabilities.',
-    image: 'https://placehold.co/600x400/2563eb/ffffff?text=Chat+App',
-    result: 'Supports 10,000+ concurrent users with sub-100ms message delivery',
+    title: 'Pixel Galaxy',
+    description: 'A cutting-edge platform for multilingual AI-powered image creation with intuitive UX and fast performance.',
+    image: '/projects/aiuniverse.png',
+    result: 'Advanced AI image generation platform with multilingual support',
     techStack: [
-      { icon: SiReact, name: 'React' },
+      { icon: SiReact, name: 'React.js' },
       { icon: SiNodedotjs, name: 'Node.js' },
-      { icon: SiMongodb, name: 'MongoDB' },
+      { icon: SiTailwindcss, name: 'Tailwind CSS' },
     ],
     complexity: 'High',
-    category: 'Full Stack',
-    demoUrl: 'https://chat-app-demo.com',
-    repoUrl: 'https://github.com/yourusername/chat-app',
+    category: 'AI/ML',
+    demoUrl: 'https://main-universe.vercel.app/',
+    repoUrl: 'https://github.com/codedpro/Pixel-Galaxy',
   },
-  // Add more projects as needed
 ];
-
-const categories = ['All', 'Full Stack', 'Frontend', 'Backend', 'DevOps'];
 
 export default function AllProjects() {
   const [selectedCategory, setSelectedCategory] = useState('All');
