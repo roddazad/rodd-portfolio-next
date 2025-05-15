@@ -1,6 +1,8 @@
 import Hero from '@/components/Hero/Hero';
 import Projects from '@/components/Projects/Projects';
 import Skills from '@/components/Skills/Skills';
+import Experience from '@/components/Experience/Experience';
+import About from '@/components/About/About';
 
 export default function Home() {
   return (
@@ -11,6 +13,8 @@ export default function Home() {
       <div className="relative z-10 bg-gray-900 pt-20">
         <Projects />
         <Skills />
+        <Experience />
+        <About />
       </div>
     </main>
   );
