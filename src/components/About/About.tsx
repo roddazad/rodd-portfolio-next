@@ -83,7 +83,7 @@ export default function About() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 rounded-full">
               <span className="text-blue-400 font-medium">Fun Fact:</span>
-              <span className="text-gray-300">Electrical Engineer turned Full-Stack Developer, now pursuing Cloud Computing expertise at ASU</span>
+              <span className="text-gray-300">My secret superpower? Creating delicious dishes that never fail to surprise my wife, and my legendary BBQ skills that have friends always asking for the next cookout</span>
             </div>
           </motion.div>
         </motion.div>
