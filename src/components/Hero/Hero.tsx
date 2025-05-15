@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { FaGithub, FaLinkedin, FaTwitter, FaDatabase } from 'react-icons/fa';
 import { SiReact, SiNodedotjs, SiTypescript, SiTailwindcss, SiNextdotjs, SiMongodb, SiPostgresql } from 'react-icons/si';
@@ -23,13 +23,26 @@ const socialLinks = [
 ];
 
 export default function Hero() {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 500], [0, 150]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
-      {/* Background animated gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 animate-gradient" />
+    <section id="home" className="fixed top-0 left-0 w-full h-screen">
+      {/* Background with parallax effect */}
+      <motion.div 
+        className="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-800"
+        style={{ y }}
+      >
+        {/* Animated gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 animate-gradient" />
+      </motion.div>
       
       {/* Content container */}
-      <div className="container mx-auto px-4 py-16 relative z-10">
+      <motion.div 
+        className="container mx-auto px-4 h-full flex items-center justify-center relative z-10"
+        style={{ opacity }}
+      >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left column - Text content */}
           <motion.div
@@ -39,7 +52,7 @@ export default function Hero() {
             className="text-center lg:text-left"
           >
             <motion.h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -48,16 +61,16 @@ export default function Hero() {
             </motion.h1>
             
             <motion.h2 
-              className="text-2xl md:text-3xl font-semibold mb-6 text-gray-700 dark:text-gray-200"
+              className="text-2xl md:text-3xl font-semibold mb-6 text-gray-200"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              Founder of <a href="https://code-nest.dev" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">code-nest.dev</a> | Turning complex problems into clean, scalable solutions
+              Founder of <a href="https://code-nest.dev" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">code-nest.dev</a> | Turning complex problems into clean, scalable solutions
             </motion.h2>
             
             <motion.p 
-              className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0"
+              className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
@@ -76,13 +89,13 @@ export default function Hero() {
             >
               <a
                 href="#projects"
-                className="px-8 py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl"
+                className="px-8 py-3 rounded-lg bg-blue-500 text-white font-semibold hover:bg-blue-600 transition-colors shadow-lg hover:shadow-xl"
               >
                 View My Work
               </a>
               <a
                 href="#contact"
-                className="px-8 py-3 rounded-lg border-2 border-blue-600 text-blue-600 dark:text-blue-400 font-semibold hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
+                className="px-8 py-3 rounded-lg border-2 border-blue-400 text-blue-400 font-semibold hover:bg-blue-400/10 transition-colors"
               >
                 Contact Me
               </a>
@@ -101,7 +114,7 @@ export default function Hero() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   <social.icon className="w-6 h-6" />
                 </a>
@@ -118,10 +131,10 @@ export default function Hero() {
               {techStack.map((tech) => (
                 <div
                   key={tech.name}
-                  className="flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-gray-800 shadow-md"
+                  className="flex items-center gap-2 px-3 py-1 rounded-full bg-gray-800/50 backdrop-blur-sm shadow-md"
                 >
-                  <tech.icon className="w-5 h-5 text-blue-600" />
-                  <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                  <tech.icon className="w-5 h-5 text-blue-400" />
+                  <span className="text-sm font-medium text-gray-200">
                     {tech.name}
                   </span>
                 </div>
@@ -138,8 +151,8 @@ export default function Hero() {
           >
             <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
               {/* Profile image */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 animate-pulse" />
-              <div className="absolute inset-2 rounded-full overflow-hidden bg-white dark:bg-gray-800">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse" />
+              <div className="absolute inset-2 rounded-full overflow-hidden bg-gray-800">
                 <Image
                   src="/profile.jpg"
                   alt="Rodd Azad"
@@ -150,12 +163,12 @@ export default function Hero() {
               </div>
               
               {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-500/20 rounded-full blur-2xl" />
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-purple-500/20 rounded-full blur-2xl" />
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-400/20 rounded-full blur-2xl" />
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-purple-400/20 rounded-full blur-2xl" />
             </div>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 } 
