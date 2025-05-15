@@ -13,7 +13,6 @@ interface ProjectCardProps {
     icon: React.ComponentType<{ className?: string }>;
     name: string;
   }>;
-  complexity: string;
   demoUrl?: string;
   repoUrl?: string;
   onLearnMore: () => void;
@@ -25,7 +24,6 @@ export default function ProjectCard({
   image,
   result,
   techStack,
-  complexity,
   demoUrl,
   repoUrl,
   onLearnMore,
@@ -41,18 +39,21 @@ export default function ProjectCard({
           src={image}
           alt={title}
           fill
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          className="object-cover transition-transform duration-300 group-hover:scale-105 opacity-60"
         />
-        {/* Complexity Badge */}
-        <div className="absolute top-4 right-4 px-3 py-1 bg-blue-600 text-white text-sm font-medium rounded-full">
-          {complexity}
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80" />
+        
+        {/* Title Overlay */}
+        <div className="absolute inset-0 flex items-center justify-center p-4">
+          <h3 className="text-2xl font-bold text-white text-center drop-shadow-lg">
+            {title}
+          </h3>
         </div>
       </div>
 
       {/* Content */}
       <div className="flex flex-col flex-grow p-6 text-white">
-        <h3 className="text-xl font-bold mb-2 min-h-[3rem]">{title}</h3>
-        
         {/* Tech Stack */}
         <div className="flex flex-wrap gap-2 mb-3">
           {techStack.map((tech, index) => (
