@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { SiReact, SiNodedotjs, SiTypescript, SiTailwindcss, SiNextdotjs, SiMongodb, SiPostgresql, SiDocker, SiPython, SiDjango } from 'react-icons/si';
+import { SiReact, SiNodedotjs, SiTypescript, SiTailwindcss, SiNextdotjs, SiMongodb, SiPostgresql, SiDocker, SiPython, SiDjango, SiFramer, SiVite, SiOpenai, SiExpress } from 'react-icons/si';
 import ProjectCarousel from './ProjectCarousel';
 import ProjectModal from './ProjectModal';
 
@@ -18,6 +18,8 @@ const featuredProjects = [
       { icon: SiNextdotjs, name: 'Next.js' },
       { icon: SiTypescript, name: 'TypeScript' },
       { icon: SiTailwindcss, name: 'Tailwind CSS' },
+      { icon: SiReact, name: 'React' },
+      { icon: SiMongodb, name: 'MongoDB' },
     ],
     demoUrl: 'https://nesters-bytebattle-quiz-app-eta.vercel.app/',
     repoUrl: 'https://github.com/codedpro/BYTE-BATTLE',
@@ -32,6 +34,8 @@ const featuredProjects = [
       { icon: SiNextdotjs, name: 'Next.js' },
       { icon: SiTypescript, name: 'TypeScript' },
       { icon: SiTailwindcss, name: 'Tailwind CSS' },
+      { icon: SiReact, name: 'React' },
+      { icon: SiFramer, name: 'Framer Motion' },
     ],
     demoUrl: 'https://nesters-saas-landing-page.vercel.app/',
     repoUrl: 'https://github.com/codedpro/SaaSify',
@@ -46,6 +50,8 @@ const featuredProjects = [
       { icon: SiNextdotjs, name: 'Next.js' },
       { icon: SiTypescript, name: 'TypeScript' },
       { icon: SiTailwindcss, name: 'Tailwind CSS' },
+      { icon: SiReact, name: 'React' },
+      { icon: SiFramer, name: 'Framer Motion' },
     ],
     demoUrl: 'https://nesters-donezo-landing-delta.vercel.app/',
     repoUrl: 'https://github.com/codedpro/Donezo',
@@ -60,6 +66,8 @@ const featuredProjects = [
       { icon: SiNextdotjs, name: 'Next.js' },
       { icon: SiTypescript, name: 'TypeScript' },
       { icon: SiTailwindcss, name: 'Tailwind CSS' },
+      { icon: SiReact, name: 'React' },
+      { icon: SiFramer, name: 'Framer Motion' },
     ],
     demoUrl: 'https://nesters-ai-robotics-landing-page.vercel.app/',
     repoUrl: 'https://github.com/codedpro/NorthenAI---Robotics',
@@ -74,6 +82,11 @@ const featuredProjects = [
       { icon: SiNextdotjs, name: 'Next.js' },
       { icon: SiTypescript, name: 'TypeScript' },
       { icon: SiTailwindcss, name: 'Tailwind CSS' },
+      { icon: SiReact, name: 'React' },
+      { icon: SiFramer, name: 'Framer Motion' },
+      { icon: SiNodedotjs, name: 'Node.js' },
+      { icon: SiExpress, name: 'Express.js' },
+      { icon: SiMongodb, name: 'MongoDB' },
     ],
     demoUrl: 'https://nesters-kidlearn-landing-two.vercel.app/',
     repoUrl: 'https://github.com/codedpro/Kidlearn',
@@ -85,9 +98,13 @@ const featuredProjects = [
     image: '/projects/aiuniverse.png',
     result: 'Advanced AI image generation platform with multilingual support',
     techStack: [
-      { icon: SiReact, name: 'React.js' },
-      { icon: SiNodedotjs, name: 'Node.js' },
+      { icon: SiReact, name: 'React' },
+      { icon: SiVite, name: 'Vite' },
       { icon: SiTailwindcss, name: 'Tailwind CSS' },
+      { icon: SiNodedotjs, name: 'Node.js' },
+      { icon: SiExpress, name: 'Express.js' },
+      { icon: SiMongodb, name: 'MongoDB' },
+      { icon: SiOpenai, name: 'OpenAI API' },
     ],
     demoUrl: 'https://main-universe.vercel.app/',
     repoUrl: 'https://github.com/codedpro/Pixel-Galaxy',
