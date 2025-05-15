@@ -24,11 +24,11 @@ const socialLinks = [
 
 export default function Hero() {
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 500], [0, 150]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const y = useTransform(scrollY, [0, 800], [0, 150]);
+  const opacity = useTransform(scrollY, [0, 600], [1, 0]);
 
   return (
-    <section id="home" className="fixed top-0 left-0 w-full h-screen">
+    <section id="home" className="relative w-full min-h-screen">
       {/* Background with parallax effect */}
       <motion.div 
         className="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-800"
@@ -40,10 +40,10 @@ export default function Hero() {
       
       {/* Content container */}
       <motion.div 
-        className="container mx-auto px-4 h-full flex items-center justify-center relative z-10"
+        className="container mx-auto px-4 min-h-screen flex items-center justify-center relative z-10 pt-20 md:pt-24"
         style={{ opacity }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-12">
           {/* Left column - Text content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -147,9 +147,9 @@ export default function Hero() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="relative"
+            className="relative flex justify-center lg:justify-end"
           >
-            <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
+            <div className="relative w-64 h-64 md:w-80 md:h-80">
               {/* Profile image */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse" />
               <div className="absolute inset-2 rounded-full overflow-hidden bg-gray-800">
@@ -159,6 +159,7 @@ export default function Hero() {
                   fill
                   className="object-cover"
                   priority
+                  sizes="(max-width: 768px) 256px, 320px"
                 />
               </div>
               

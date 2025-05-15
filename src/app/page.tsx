@@ -10,15 +10,16 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gray-900">
       <Hero />
-      {/* Spacer div to ensure content scrolls over the hero section */}
-      <div className="h-screen" />
-      <div className="relative z-10 bg-gray-900 pt-20">
-        <Projects />
-        <Skills />
-        <Experience />
-        <About />
-        <Contact />
-        <Footer />
+      {/* Main content with proper spacing */}
+      <div className="relative z-10 bg-gray-900">
+        <div className="pt-16 md:pt-20">
+          <Projects />
+          <Skills />
+          <Experience />
+          <About />
+          <Contact />
+          <Footer />
+        </div>
       </div>
     </main>
   );
