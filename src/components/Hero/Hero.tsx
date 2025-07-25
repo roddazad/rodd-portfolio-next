@@ -17,9 +17,9 @@ const techStack = [
 ];
 
 const socialLinks = [
-  { icon: FaGithub, href: 'https://github.com/yourusername', label: 'GitHub' },
-  { icon: FaLinkedin, href: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
-  { icon: FaTwitter, href: 'https://twitter.com/yourusername', label: 'Twitter' },
+  { icon: FaGithub, href: 'https://github.com/codedpro', label: 'GitHub' },
+  { icon: FaLinkedin, href: 'https://linkedin.com/in/roddazad', label: 'LinkedIn' },
+  { icon: FaTwitter, href: 'https://twitter.com/roddazad', label: 'Twitter' },
 ];
 
 export default function Hero() {
